@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with Abinash S. through Email, GitHub, and LinkedIn.">
+    <title>Abinash S. | Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #080b12;
+            --card: rgba(19, 27, 43, 0.78);
+            --text: #f3f6ff;
+            --muted: #9ba8bf;
+            --accent: #7c5cff;
+            --cyan: #00d4ff;
+            --border: rgba(255, 255, 255, 0.10);
+            --gradient: linear-gradient(135deg, #7c5cff, #00d4ff);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .glow {
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glow-one {
+            background: var(--accent);
+            top: -120px;
+            left: -100px;
+        }
+
+        .glow-two {
+            background: var(--cyan);
+            right: -120px;
+            bottom: -100px;
+        }
+
+        .container {
+            width: min(1000px, 90%);
+            margin: 0 auto;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 22px 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--cyan);
+        }
+
+        .nav-label {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        main {
+            padding: 115px 0 65px;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 55px;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 14px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 212, 255, 0.22);
+            background: rgba(0, 212, 255, 0.07);
+            color: var(--cyan);
+            border-radius: 30px;
+            font-size: 0.82rem;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.7rem, 7vw, 5rem);
+            line-height: 1.1;
+            letter-spacing: -2.5px;
+            margin-bottom: 22px;
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 580px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: transform 0.3s ease, border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .contact-card:nth-child(2) {
+            animation-delay: 0.12s;
+        }
+
+        .contact-card:nth-child(3) {
+            animation-delay: 0.24s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.22);
+        }
+
+        .icon-box {
+            width: 65px;
+            height: 65px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+            border-radius: 17px;
+            background: rgba(124, 92, 255, 0.13);
+            border: 1px solid rgba(124, 92, 255, 0.2);
+            color: var(--cyan);
+            font-size: 1.7rem;
+        }
+
+        .contact-card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-bottom: 22px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: auto;
+            padding: 10px 18px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            background: var(--gradient);
+            border-color: transparent;
+            color: white;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.83rem;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .contact-card {
+                padding: 27px 20px;
+            }
+
+            h1 {
+                letter-spacing: -1.5px;
+            }
+
+            main {
+                padding-top: 110px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Abinash<span>.</span></a>
+            <span class="nav-label">Contact</span>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="hero">
+                <div class="eyebrow">✦ Let's Connect</div>
+
+                <h1>
+                    Get in <span class="gradient-text">Touch.</span>
+                </h1>
+
+                <p>
+                    Find me through email or connect with me on GitHub
+                    and LinkedIn.
+                </p>
+            </section>
+
+            <section class="contact-grid" aria-label="Contact options">
+
+                <!-- Email -->
+                <article class="contact-card">
+                    <div class="icon-box" aria-hidden="true">✉</div>
+
+                    <h2>Email</h2>
+
+                    <p>abinash.s2008@gmail.com</p>
+
+                    <a
+                        class="contact-link"
+                        href="mailto:abinash.s2008@gmail.com">
+                        Send Email ↗
+                    </a>
+                </article>
+
+                <!-- GitHub -->
+                <article class="contact-card">
+                    <div class="icon-box" aria-hidden="true">⌘</div>
+
+                    <h2>GitHub</h2>
+
+                    <p>Explore my repositories and projects.</p>
+
+                    <a
+                        class="contact-link"
+                        href="https://github.com/abinashs2008-create"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Visit GitHub ↗
+                    </a>
+                </article>
+
+                <!-- LinkedIn -->
+                <article class="contact-card">
+                    <div class="icon-box" aria-hidden="true">in</div>
+
+                    <h2>LinkedIn</h2>
+
+                    <p>Connect with me professionally.</p>
+
+                    <a
+                        class="contact-link"
+                        href="www.linkedin.com/in/abinash-s-99595a377"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Visit LinkedIn ↗
+                    </a>
+                </article>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            © <span id="year"></span> Abinash S. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+  </html>
